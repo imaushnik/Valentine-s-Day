@@ -35,7 +35,7 @@ body {
 
 .book {
   width: 350px;
-  height: 500px;
+  height: 5000px;
   perspective: 2000px;
   margin: 20px auto 0 auto;
   display: flex;
