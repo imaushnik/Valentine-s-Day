@@ -29,3 +29,10 @@ function createHeart() {
 }
 
 setInterval(createHeart, 250);
+<script>
+  const music = document.getElementById("bg-music");
+
+  document.body.addEventListener("click", () => {
+    music.play();
+  }, { once: true });
+</script>
