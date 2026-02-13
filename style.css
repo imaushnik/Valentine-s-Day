@@ -1,0 +1,140 @@
+/* Reset & Body */
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(circle, #ff758c, #ff7eb3);
+  font-family: 'Segoe UI', sans-serif;
+  overflow-x: hidden;
+}
+
+/* Main Layout */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 25px;
+}
+
+/* Valentine Title */
+
+.valentine-title {
+  text-align: center;
+  margin-bottom: 15px;
+  padding: 10px 20px;
+  background: rgba(255,255,255,0.95);
+  border-radius: 25px;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  color: #ff3f6c;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Book */
+
+.book {
+  width: 350px;
+  height: 500px;
+  perspective: 2000px;
+  margin: 20px auto 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Pages */
+
+.pages {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.page {
+  width: 100%;
+  height: 100%;
+  background: #fffaf0;
+  border-radius: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-origin: left;
+  transition: transform 1s ease;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  padding: 25px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.page h1,
+.page h2 {
+  color: #ff4b6e;
+}
+
+.page p {
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Page Stacking */
+
+.page:nth-child(1) { z-index: 6; }
+.page:nth-child(2) { z-index: 5; }
+.page:nth-child(3) { z-index: 4; }
+.page:nth-child(4) { z-index: 3; }
+.page:nth-child(5) { z-index: 2; }
+.page:nth-child(6) { z-index: 1; }
+
+.page.flipped {
+  transform: rotateY(-180deg);
+}
+
+/* Falling Hearts */
+
+.hearts {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 9999;
+}
+
+.heart {
+  position: absolute;
+  top: -20px;
+  color: #ff4b6e;
+  animation: fall linear forwards;
+  opacity: 0.9;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(110vh) scale(0.7);
+    opacity: 0;
+  }
+}
+
+/* Mobile Optimization */
+
+@media (max-width: 600px) {
+
+  .valentine-title {
+    font-size: 1.4rem;
+    padding: 8px 14px;
+  }
+
+  .book {
+    width: 280px;
+    height: 420px;
+    margin-top: 12px;
+  }
+
+}
